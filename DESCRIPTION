@@ -24,3 +24,5 @@ Imports:
     readr,
     scales,
     tidyr
+URL: https://github.com/deborahmartinez/cuestionariosm
+BugReports: https://github.com/deborahmartinez/cuestionariosm/issues
