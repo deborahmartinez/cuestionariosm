@@ -1,0 +1,25 @@
+﻿nombre,info_aux,clase,codigo
+respondent_id,NA,numeric,respondent_id
+collector_id,NA,numeric,collector_id
+ip_address,NA,character,ip_address
+email_address,NA,logical,email_address
+first_name,NA,logical,first_name
+last_name,NA,logical,last_name
+custom_1,NA,logical,custom_1
+¿Recibió oportunamente información y asesoría para el ingreso al evento?,Response,character,ingreso
+¿Cómo calificaría el servicio que le brindó el equipo de staff durante el evento?,Response,character,servicio
+"¿Considera que la duración del evento fue adecuada, debía de haber durado más o menos tiempo?",Response,character,duracion
+"Durante el evento, ¿ocurrió algún incidente que afectara sus expectativas sobre el evento? *Se puede seleccionar más de una opción","Pérdidas de conectividad: sonido, imagen",character,accidente_conectividad
+...12,Los asistentes no llegaron a tiempo,character,accidente_asistentes
+...13,Insultos por parte de los participantes,character,accidente_insultos
+...14,Tuvo problemas con Zoom,character,accidente_zoom
+...15,Constantes interrupciones en las participaciones,character,accidente_interrupciones
+...16,Falta de organización entre las dinámicas,character,accidente_organizacion
+...17,En su sala no asistió un supervisor,character,accidente_superv
+...18,Había ruidos externos que afectaban el diálogo,character,accidente_ruidos
+...19,Los participantes tenían poco interés en el evento,character,accidente_interes
+...20,Mala atención por parte del staff,character,accidente_staff
+...21,Problemas con el Opinómetro,character,accidente_op
+...22,Otro (especifique),character,accidente_otro
+"Según sus experiencias docentes durante esta pandemia por COVID-19, ¿cómo calificaría la elección de temas que se abordaron durante el evento?",Response,character,temas
+"De manera general, en una escala del 0 al 10, donde 0 es muy malo y 10 es muy bueno, ¿qué calificación le da al evento?",Open-Ended Response,numeric,calificacion

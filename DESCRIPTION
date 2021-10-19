@@ -1,0 +1,26 @@
+Package: cuestionariosm
+Title: What the Package Does (One Line, Title Case)
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Déborah",
+           family = "Martínez",
+           role = c("aut", "cre"),
+           email = "dmartinez@gerenciadelpoder.com.mx")
+Description: Es una paquetería especializada en realizar el flujo de trabajo para cuestionarios de Survey Monkey.
+License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
+    license
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Depends: 
+    R (>= 2.10)
+Imports: 
+    ggplot2,
+    dplyr,
+    forcats,
+    glue,
+    purrr,
+    readr,
+    scales,
+    tidyr
