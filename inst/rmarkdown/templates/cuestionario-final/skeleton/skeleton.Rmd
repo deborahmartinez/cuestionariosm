@@ -13,14 +13,18 @@ library(cuestionariosm)
 
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 
-bd <- leer_base(dir_codigos ="~/Documents/Git/ConversacionSupervisores/Prueba/" ,      archivo  = "~/Dropbox (Selva)/Ciencia de datos/Consultoría Estadística/Clientes/Nacional/SEP/Escucha Magisterial/4. Estado de México II/Evaluación_EdoMexII.csv",  crear_codigo = T)
+# corre esta función (leer_base) en la consola con la base de datos del cuestionario descargado de survey monkey que quieres presentar. Si quieres crear una base de datos de códigos para renombrarla usa el parámetro codigos = T
+bd <- cuestionariosm::cuestionario_prueba
 
-codigos <- readr::read_csv("~/Documents/Git/cuestionariosm/data/codigos.csv")
+#Abre la base de codigos.csv que se creó automáticamente y haz las modificaciones manuales que deseas en la columna "codigo"
+# Lee la base de códigos modificada
+codigos<- readr::read_csv("../../../../../data/codigos.csv")
 
+# Utiliza la función (nombrar_base()) para renombrar la base con los códigos que asignaste en la base de codigos.csv
 bd<- nombrar_base(bd, codigos)
 
 
-
+#Aquí puedes poner algunos parámetros para asignarlos en la presentación en el texto
 lugar <- "Conversación con supervisores"
 asistentes <- 7502
 
@@ -29,10 +33,11 @@ encuestas <- bd %>%  nrow
 ```
 
 
-
+<!-- Aquí va el título de la diapositiva -->
 ### Estado de México
 :::::::::::::: {.columns}
 ::: {.column}
+<!-- Aquí va el texto que se mostrará en la diapositiva -->
 En el evento "Conversaciones Magisteriales" llevado a cabo en el `r lugar`, se recibieron a `r asistentes ` personas integrantes del magisterio, de los cuales el  respondió el cuestionario de satisfacción sobre el evento.
 
 La calificación general otorgada al evento fue de `r mean(bd$calificacion) %>%  round(1)` puntos en promedio.
@@ -40,21 +45,27 @@ La calificación general otorgada al evento fue de `r mean(bd$calificacion) %>% 
 :::
 ::: {.column}
 ```{r, dpi = 300}
+# aquí puedes poner la función de la gráfica que quieres poner en esta diapositiva
 graficar_barras(bd, servicio)
 ```
 :::
 ::::::::::::::
+<!-- los ultimos puntos son para finalizar la diapositiva -->
 
+<!-- Aquí va el título de la diapositiva -->
 ### 
 :::::::::::::: {.columns}
 ::: {.column}
+<!-- Aquí va el texto que se mostrará en la diapositiva -->
 Estado de México I
 :::
 ::: {.column}
 ```{r, dpi = 300}
+# aquí puedes poner la función de la gráfica que quieres poner en esta diapositiva
 transformar_multirespuesta(bd, "accidente") %>% 
   graficar_barras(accidente)
 
 ```
 :::
 ::::::::::::::
+<!-- los ultimos puntos son para finalizar la diapositiva -->
