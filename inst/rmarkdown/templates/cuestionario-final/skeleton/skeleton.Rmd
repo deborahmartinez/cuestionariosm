@@ -18,7 +18,7 @@ bd <- cuestionariosm::cuestionario_prueba
 
 #Abre la base de codigos.csv que se creó automáticamente y haz las modificaciones manuales que deseas en la columna "codigo"
 # Lee la base de códigos modificada
-codigos<- readr::read_csv("../../../../../data/codigos.csv")
+codigos<- cuestionariosm::codigos
 
 # Utiliza la función (nombrar_base()) para renombrar la base con los códigos que asignaste en la base de codigos.csv
 bd<- nombrar_base(bd, codigos)
