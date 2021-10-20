@@ -2,7 +2,7 @@
 % Please edit documentation in R/analisis_graficar.R
 \name{transformar_multirespuesta}
 \alias{transformar_multirespuesta}
-\title{Title}
+\title{Transformar la base de datos en el formato adecuado para graficar preguntas multirrespuesta}
 \usage{
 transformar_multirespuesta(bd, grupo)
 }
@@ -15,5 +15,5 @@ transformar_multirespuesta(bd, grupo)
 
 }
 \description{
-Title
+Transformar la base de datos en el formato adecuado para graficar preguntas multirrespuesta
 }
