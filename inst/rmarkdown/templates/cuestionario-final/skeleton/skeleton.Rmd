@@ -1,0 +1,60 @@
+---
+title: "Evaluación edo mex"
+author: "Principales resultados Aguascalientes"
+output:
+  powerpoint_presentation:
+    reference_doc: plantilla_evaluacion.pptx
+    slide_level: 3
+---
+
+```{r setup, include=FALSE}
+library(dplyr)
+library(cuestionariosm)
+
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+
+bd <- leer_base(dir_codigos ="~/Documents/Git/ConversacionSupervisores/Prueba/" ,      archivo  = "~/Dropbox (Selva)/Ciencia de datos/Consultoría Estadística/Clientes/Nacional/SEP/Escucha Magisterial/4. Estado de México II/Evaluación_EdoMexII.csv",  crear_codigo = T)
+
+codigos <- readr::read_csv("~/Documents/Git/cuestionariosm/data/codigos.csv")
+
+bd<- nombrar_base(bd, codigos)
+
+
+
+lugar <- "Conversación con supervisores"
+asistentes <- 7502
+
+encuestas <- bd %>%  nrow
+
+```
+
+
+
+### Estado de México
+:::::::::::::: {.columns}
+::: {.column}
+En el evento "Conversaciones Magisteriales" llevado a cabo en el `r lugar`, se recibieron a `r asistentes ` personas integrantes del magisterio, de los cuales el  respondió el cuestionario de satisfacción sobre el evento.
+
+La calificación general otorgada al evento fue de `r mean(bd$calificacion) %>%  round(1)` puntos en promedio.
+
+:::
+::: {.column}
+```{r, dpi = 300}
+graficar_barras(bd, servicio)
+```
+:::
+::::::::::::::
+
+### 
+:::::::::::::: {.columns}
+::: {.column}
+Estado de México I
+:::
+::: {.column}
+```{r, dpi = 300}
+transformar_multirespuesta(bd, "accidente") %>% 
+  graficar_barras(accidente)
+
+```
+:::
+::::::::::::::
