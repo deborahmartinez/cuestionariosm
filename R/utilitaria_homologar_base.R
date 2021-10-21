@@ -12,7 +12,7 @@ leer_base <- function(archivo, dir_codigos = "data/", crear_codigo= T){
   bd <- readr::read_csv(file = archivo  )
   nombre <- names(bd)
   info_aux <- bd %>%  slice(1) %>%  as.character()
-  bd <-readr::read_csv(file = archivo, skip = 2)
+  bd <-readr::read_csv(file = archivo, skip = 2, col_names = F)
   clases <- purrr::map_chr(.x = bd,~.x %>% class )
   if(crear_codigo){
     codigos <- tibble(nombre, info_aux, clase=clases, codigo= "")
